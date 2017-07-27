@@ -1,0 +1,32 @@
+下载代码：
+git clone https://github.com/WeiyuCheng/Linux_kernel_for_integration.git 
+
+安装相关工具：
+sudo apt-get update  
+sudo apt-get install build-essential -y  
+sudo apt-get install libncurses-dev
+sudo apt-get install initramfs-tools -y
+
+安装内核：
+复制当前系统配置文件：
+cp /boot/config-x.xx.x .config
+make menuconfig
+make  
+sudo make modules_install  
+sudo make install  
+
+安装文件系统：
+sudo vim /boot/grub/grub.cfg  
+在本内核版本（3.11）配置选项中，
+linux /boot/vmlinux-3.11.0+ 一行加入memmap=2G\$1G
+即在1G处预留2G内存用于挂载文件系统。
+重启......
+cd fs/hmfs
+make all 
+sudo insmod hmfs.ko
+mkdir ~/mnt-hmfs
+sudo mount -t hmfs -o physaddr=0x40000000,init=2G,gid=1000,uid=1000 none ~/mnt-hmfs
+运行mount或df -lh查看文件系统是否挂载成功
+若成功，可在~/mnt-hmfs文件夹下创建文件，测试文件系统功能。
+
+本文参考http://blog.csdn.net/sunwukong54/article/details/50899191

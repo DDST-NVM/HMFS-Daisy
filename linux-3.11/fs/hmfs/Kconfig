@@ -1,0 +1,30 @@
+config HMFS_FS
+	tristate "HMFS filesystem support (EXPERIMENTAL)"
+	depends on BLOCK
+	help
+	  If unsure, say N.
+
+config HMFS_DEBUG
+	bool "HMFS debug support"
+	depends on HMFS_FS
+	help
+	  /sys/kernel/debug/hmfs/status includes:
+
+config HMFS_DEBUG_GC
+	bool "HMFS Garbage Collection Debug Support"
+	depends on HMFS_DEBUG
+
+config HMFS_XATTR
+	bool "HMFS extended attributes"
+	default y
+	depends on HMFS_FS
+	help
+		if unsure, say N
+
+config HMFS_ACL
+	bool "HMFS ACL"
+	select FS_POSIX_ACL
+	default y
+	depends on HMFS_XATTR
+	help
+		if not sure
