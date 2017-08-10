@@ -186,7 +186,7 @@ int p_free(int pid) {
         // nosense = *((int *)pLeapAddr + 3); // need it or not?
 
         if (nid == pid) {
-            printf("Find id %d in the heap.\n", pid);
+            // printf("Find id %d in the heap.\n", pid);
 	    /* clear this region by setting all bytes to be 0s */
             memset(pLeapAddr + 3*sizeof(int), 0, length);
             *(int *)pLeapAddr = 0; // pid = 0, free chunk; no need to change length
