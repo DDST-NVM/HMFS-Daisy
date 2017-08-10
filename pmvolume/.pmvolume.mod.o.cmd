@@ -1,8 +1,8 @@
-cmd_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := gcc -Wp,-MD,/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/.pmvolume.mod.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi -Iinclude/generated/uapi -include /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m64 -mno-sse -mpreferred-stack-boundary=3 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -fstack-protector -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(pmvolume.mod)"  -D"KBUILD_MODNAME=KBUILD_STR(pmvolume)" -DMODULE  -c -o /home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o /home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.c
+cmd_/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o := gcc -Wp,-MD,/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/.pmvolume.mod.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi -Iinclude/generated/uapi -include /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m64 -mno-sse -mpreferred-stack-boundary=3 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -fstack-protector -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(pmvolume.mod)"  -D"KBUILD_MODNAME=KBUILD_STR(pmvolume)" -DMODULE  -c -o /home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o /home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.c
 
-source_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := /home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.c
+source_/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o := /home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.c
 
-deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
+deps_/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/module/unload.h) \
   include/linux/module.h \
     $(wildcard include/config/sysfs.h) \
@@ -27,14 +27,14 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/phys/addr/t/64bit.h) \
     $(wildcard include/config/64bit.h) \
   include/uapi/linux/types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/types.h \
   include/asm-generic/int-ll64.h \
   include/uapi/asm-generic/int-ll64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/bitsperlong.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/bitsperlong.h \
   include/asm-generic/bitsperlong.h \
   include/uapi/asm-generic/bitsperlong.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/linux/posix_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/linux/posix_types.h \
   include/linux/stddef.h \
   include/uapi/linux/stddef.h \
   include/linux/compiler.h \
@@ -49,15 +49,15 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/optimize/inlining.h) \
   include/linux/compiler-gcc4.h \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/posix_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/posix_types.h \
     $(wildcard include/config/x86/32.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/posix_types_64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/posix_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/posix_types_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/posix_types.h \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/linux/const.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/linux/const.h \
   include/linux/stat.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/stat.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/stat.h \
   include/uapi/linux/stat.h \
   include/linux/time.h \
     $(wildcard include/config/arch/uses/gettimeoffset.h) \
@@ -74,18 +74,18 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/linux/export.h \
     $(wildcard include/config/have/underscore/symbol/prefix.h) \
     $(wildcard include/config/modversions.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/linkage.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/linkage.h \
     $(wildcard include/config/x86/64.h) \
     $(wildcard include/config/x86/alignment/16.h) \
   include/linux/bitops.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/bitops.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/bitops.h \
     $(wildcard include/config/x86/cmov.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/alternative.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/alternative.h \
     $(wildcard include/config/paravirt.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/asm.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cpufeature.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/asm.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cpufeature.h \
     $(wildcard include/config/x86/debug/static/cpu/has.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/required-features.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/required-features.h \
     $(wildcard include/config/x86/minimum/cpu/family.h) \
     $(wildcard include/config/math/emulation.h) \
     $(wildcard include/config/x86/pae.h) \
@@ -96,15 +96,15 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/asm-generic/bitops/find.h \
     $(wildcard include/config/generic/find/first/bit.h) \
   include/asm-generic/bitops/sched.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/arch_hweight.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/arch_hweight.h \
   include/asm-generic/bitops/const_hweight.h \
   include/asm-generic/bitops/le.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/byteorder.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/byteorder.h \
   include/linux/byteorder/little_endian.h \
   include/uapi/linux/byteorder/little_endian.h \
   include/linux/swab.h \
   include/uapi/linux/swab.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/swab.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/swab.h \
   include/linux/byteorder/generic.h \
   include/asm-generic/bitops/ext2-atomic-setbit.h \
   include/linux/log2.h \
@@ -121,8 +121,8 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/linux/kern_levels.h \
   include/linux/dynamic_debug.h \
   include/uapi/linux/kernel.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/linux/sysinfo.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cache.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/linux/sysinfo.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cache.h \
     $(wildcard include/config/x86/l1/cache/shift.h) \
     $(wildcard include/config/x86/internode/cache/shift.h) \
     $(wildcard include/config/x86/vsmp.h) \
@@ -142,19 +142,19 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/compat.h) \
     $(wildcard include/config/debug/stack/usage.h) \
   include/linux/bug.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/bug.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/thread_info.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/thread_info.h \
     $(wildcard include/config/ia32/emulation.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page_types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page_64_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page_64_types.h \
     $(wildcard include/config/physical/start.h) \
     $(wildcard include/config/physical/align.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/page_64.h \
     $(wildcard include/config/debug/virtual.h) \
     $(wildcard include/config/flatmem.h) \
   include/linux/range.h \
@@ -163,41 +163,41 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/sparsemem/vmemmap.h) \
     $(wildcard include/config/sparsemem.h) \
   include/asm-generic/getorder.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/processor.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/processor.h \
     $(wildcard include/config/cc/stackprotector.h) \
     $(wildcard include/config/m486.h) \
     $(wildcard include/config/x86/debugctlmsr.h) \
     $(wildcard include/config/xen.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/processor-flags.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/processor-flags.h \
     $(wildcard include/config/vm86.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/processor-flags.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vm86.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/ptrace.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/segment.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/processor-flags.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vm86.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/ptrace.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/segment.h \
     $(wildcard include/config/x86/32/lazy/gs.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ptrace.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ptrace-abi.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/paravirt_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ptrace.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ptrace-abi.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/paravirt_types.h \
     $(wildcard include/config/x86/local/apic.h) \
     $(wildcard include/config/paravirt/debug.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/desc_defs.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/kmap_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/desc_defs.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/kmap_types.h \
     $(wildcard include/config/debug/highmem.h) \
   include/asm-generic/kmap_types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pgtable_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pgtable_types.h \
     $(wildcard include/config/kmemcheck.h) \
     $(wildcard include/config/mem/soft/dirty.h) \
     $(wildcard include/config/compat/vdso.h) \
     $(wildcard include/config/proc/fs.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pgtable_64_types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/sparsemem.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pgtable_64_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/sparsemem.h \
   include/asm-generic/ptrace.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/vm86.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/math_emu.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/sigcontext.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/sigcontext.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/current.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/percpu.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/vm86.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/math_emu.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/sigcontext.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/sigcontext.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/current.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/percpu.h \
     $(wildcard include/config/x86/64/smp.h) \
   include/asm-generic/percpu.h \
     $(wildcard include/config/have/setup/per/cpu/area.h) \
@@ -206,17 +206,17 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/base/small.h) \
   include/linux/percpu-defs.h \
     $(wildcard include/config/debug/force/weak/per/cpu.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/msr.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/msr.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/msr-index.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/linux/ioctl.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ioctl.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/msr.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/msr.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/msr-index.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/linux/ioctl.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ioctl.h \
   include/asm-generic/ioctl.h \
   include/uapi/asm-generic/ioctl.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/errno.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/errno.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/errno-base.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cpumask.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/errno.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/errno.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/asm-generic/errno-base.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cpumask.h \
   include/linux/cpumask.h \
     $(wildcard include/config/cpumask/offstack.h) \
     $(wildcard include/config/hotplug/cpu.h) \
@@ -226,45 +226,45 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/linux/string.h \
     $(wildcard include/config/binary/printf.h) \
   include/uapi/linux/string.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/string.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/string_64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/paravirt.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/string.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/string_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/paravirt.h \
     $(wildcard include/config/paravirt/spinlocks.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/nops.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/nops.h \
     $(wildcard include/config/mk7.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/special_insns.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/special_insns.h \
   include/linux/personality.h \
   include/uapi/linux/personality.h \
   include/linux/math64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/div64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/div64.h \
   include/asm-generic/div64.h \
   include/linux/err.h \
   include/linux/irqflags.h \
     $(wildcard include/config/trace/irqflags.h) \
     $(wildcard include/config/irqsoff/tracer.h) \
     $(wildcard include/config/trace/irqflags/support.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/irqflags.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/irqflags.h \
   include/linux/atomic.h \
     $(wildcard include/config/arch/has/atomic/or.h) \
     $(wildcard include/config/generic/atomic64.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/atomic.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cmpxchg.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cmpxchg_64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/atomic64_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/atomic.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cmpxchg.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/cmpxchg_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/atomic64_64.h \
   include/asm-generic/atomic-long.h \
   include/linux/bottom_half.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/barrier.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/barrier.h \
     $(wildcard include/config/x86/ppro/fence.h) \
     $(wildcard include/config/x86/oostore.h) \
   include/linux/spinlock_types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/spinlock_types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/rwlock.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/spinlock_types.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/rwlock.h \
   include/linux/lockdep.h \
     $(wildcard include/config/lockdep.h) \
     $(wildcard include/config/lock/stat.h) \
     $(wildcard include/config/prove/rcu.h) \
   include/linux/rwlock_types.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/spinlock.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/spinlock.h \
   include/linux/rwlock.h \
   include/linux/spinlock_api_smp.h \
     $(wildcard include/config/inline/spin/lock.h) \
@@ -353,7 +353,7 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/have/arch/mutex/cpu/relax.h) \
   include/linux/rwsem.h \
     $(wildcard include/config/rwsem/generic/spinlock.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/rwsem.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/rwsem.h \
   include/linux/srcu.h \
   include/linux/rcupdate.h \
     $(wildcard include/config/rcu/torture/test.h) \
@@ -381,50 +381,50 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/linux/jiffies.h \
   include/linux/timex.h \
   include/uapi/linux/timex.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/linux/param.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/param.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/linux/param.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/param.h \
   include/asm-generic/param.h \
     $(wildcard include/config/hz.h) \
   include/uapi/asm-generic/param.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/timex.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/tsc.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/timex.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/tsc.h \
     $(wildcard include/config/x86/tsc.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mmzone.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mmzone_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mmzone.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mmzone_64.h \
   include/linux/mmdebug.h \
     $(wildcard include/config/debug/vm.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/smp.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/smp.h \
     $(wildcard include/config/x86/io/apic.h) \
     $(wildcard include/config/x86/32/smp.h) \
     $(wildcard include/config/debug/nmi/selftest.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mpspec.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mpspec.h \
     $(wildcard include/config/x86/numaq.h) \
     $(wildcard include/config/eisa.h) \
     $(wildcard include/config/x86/mpparse.h) \
     $(wildcard include/config/acpi.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mpspec_def.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/x86_init.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/bootparam.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mpspec_def.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/x86_init.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/bootparam.h \
   include/linux/screen_info.h \
   include/uapi/linux/screen_info.h \
   include/linux/apm_bios.h \
   include/uapi/linux/apm_bios.h \
   include/linux/edd.h \
   include/uapi/linux/edd.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/e820.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/e820.h \
     $(wildcard include/config/efi.h) \
     $(wildcard include/config/hibernation.h) \
     $(wildcard include/config/memtest.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/e820.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/e820.h \
     $(wildcard include/config/intel/txt.h) \
   include/linux/ioport.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/ist.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ist.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/ist.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/ist.h \
   include/video/edid.h \
     $(wildcard include/config/x86.h) \
   include/uapi/video/edid.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/apicdef.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/apic.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/apicdef.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/apic.h \
     $(wildcard include/config/x86/x2apic.h) \
   include/linux/pm.h \
     $(wildcard include/config/vt/console/sleep.h) \
@@ -432,24 +432,24 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/pm/runtime.h) \
     $(wildcard include/config/pm/clk.h) \
     $(wildcard include/config/pm/generic/domains.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/fixmap.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/fixmap.h \
     $(wildcard include/config/paravirt/clock.h) \
     $(wildcard include/config/provide/ohci1394/dma/init.h) \
     $(wildcard include/config/x86/visws/apic.h) \
     $(wildcard include/config/pci/mmconfig.h) \
     $(wildcard include/config/x86/intel/mid.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/acpi.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/acpi.h \
     $(wildcard include/config/acpi/numa.h) \
   include/acpi/pdc_intel.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/numa.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/numa.h \
     $(wildcard include/config/numa/emu.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/topology.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/topology.h \
     $(wildcard include/config/x86/ht.h) \
   include/asm-generic/topology.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mmu.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/realmode.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/mmu.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/realmode.h \
     $(wildcard include/config/acpi/sleep.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/io.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/io.h \
     $(wildcard include/config/mtrr.h) \
   include/asm-generic/iomap.h \
     $(wildcard include/config/has/ioport.h) \
@@ -464,22 +464,22 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/xen/xen.h \
     $(wildcard include/config/xen/dom0.h) \
   include/xen/interface/xen.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/xen/interface.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/xen/interface_64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pvclock-abi.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/xen/hypervisor.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pvclock.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/xen/interface.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/xen/interface_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pvclock-abi.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/xen/hypervisor.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/pvclock.h \
   include/linux/clocksource.h \
     $(wildcard include/config/arch/clocksource/data.h) \
     $(wildcard include/config/clocksource/watchdog.h) \
     $(wildcard include/config/clksrc/of.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/clocksource.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vsyscall.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/vsyscall.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vvar.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/idle.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/io_apic.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/irq_vectors.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/clocksource.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vsyscall.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/vsyscall.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vvar.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/idle.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/io_apic.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/irq_vectors.h \
     $(wildcard include/config/have/kvm.h) \
   include/linux/topology.h \
     $(wildcard include/config/sched/smt.h) \
@@ -496,13 +496,13 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
     $(wildcard include/config/sysctl.h) \
   include/uapi/linux/sysctl.h \
   include/linux/elf.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/elf.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/user.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/user_64.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/auxvec.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vdso.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/elf.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/user.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/user_64.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/uapi/asm/auxvec.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/vdso.h \
   include/uapi/linux/elf.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/include/uapi/linux/elf-em.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/include/uapi/linux/elf-em.h \
   include/linux/kobject.h \
   include/linux/sysfs.h \
   include/linux/kobject_ns.h \
@@ -515,8 +515,8 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/linux/static_key.h \
   include/linux/jump_label.h \
     $(wildcard include/config/jump/label.h) \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/jump_label.h \
-  /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/arch/x86/include/asm/module.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/jump_label.h \
+  /home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/arch/x86/include/asm/module.h \
     $(wildcard include/config/m586.h) \
     $(wildcard include/config/m586tsc.h) \
     $(wildcard include/config/m586mmx.h) \
@@ -545,6 +545,6 @@ deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o := \
   include/linux/vermagic.h \
   include/generated/utsrelease.h \
 
-/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o: $(deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o)
+/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o: $(deps_/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o)
 
-$(deps_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o):
+$(deps_/home/viking/HuangKaixin/HMFS-Daisy/pmvolume/pmvolume.mod.o):

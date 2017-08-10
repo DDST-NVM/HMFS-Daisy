@@ -1,7 +1,7 @@
 obj-m:=pmvolume.o 
 # KERNELDIR:=/lib/modules/3.11.0/build  
 PWD:=$(shell pwd) 
-KERNELDIR:=/home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/
+KERNELDIR:=/home/viking/HuangKaixin/HMFS-Daisy/linux-3.11/
 modules: 
 	        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules 
 modules_install:
