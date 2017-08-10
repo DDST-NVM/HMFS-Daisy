@@ -1,0 +1,277 @@
+diff -Nur linux-3.11/include/linux/gfp.h linux-3.11_new/include/linux/gfp.h
+--- linux-3.11/include/linux/gfp.h	2013-09-03 04:46:10.000000000 +0800
++++ linux-3.11_new/include/linux/gfp.h	2017-08-09 09:29:51.279243174 +0800
+@@ -9,6 +9,10 @@
+ 
+ struct vm_area_struct;
+ 
++#define ___GFP_PM 0X2000000u
++#define __GFP_PM ((__force gfp_t)___GFP_PM)
++#define GFP_PM (__GFP_PM)
++
+ /* Plain integer GFP bitmasks. Do not use this directly. */
+ #define ___GFP_DMA		0x01u
+ #define ___GFP_HIGHMEM		0x02u
+diff -Nur linux-3.11/include/linux/mm_types.h linux-3.11_new/include/linux/mm_types.h
+--- linux-3.11/include/linux/mm_types.h	2013-09-03 04:46:10.000000000 +0800
++++ linux-3.11_new/include/linux/mm_types.h	2017-08-09 09:30:45.323240987 +0800
+@@ -39,6 +39,8 @@
+  * and lru list pointers also.
+  */
+ struct page {
++	unsigned long pfn;
++	struct zone *zone;
+ 	/* First double word block */
+ 	unsigned long flags;		/* Atomic flags, some possibly
+ 					 * updated asynchronously */
+diff -Nur linux-3.11/mm/page_alloc.c linux-3.11_new/mm/page_alloc.c
+--- linux-3.11/mm/page_alloc.c	2013-09-03 04:46:10.000000000 +0800
++++ linux-3.11_new/mm/page_alloc.c	2017-08-09 09:28:24.135246702 +0800
+@@ -13,7 +13,7 @@
+  *  Per cpu hot/cold page lists, bulk allocation, Martin J. Bligh, Sept 2002
+  *          (lots of bits borrowed from Ingo Molnar & Andrew Morton)
+  */
+-
++//#include <linux/pmvolume.h>
+ #include <linux/stddef.h>
+ #include <linux/mm.h>
+ #include <linux/swap.h>
+@@ -66,6 +66,8 @@
+ #include <asm/div64.h>
+ #include "internal.h"
+ 
++struct zone * pm_zone;
++EXPORT_SYMBOL(pm_zone);
+ /* prevent >1 _updater_ of zone percpu pageset ->high and ->batch fields */
+ static DEFINE_MUTEX(pcp_batch_high_lock);
+ 
+@@ -546,7 +548,49 @@
+ 	unsigned long combined_idx;
+ 	unsigned long uninitialized_var(buddy_idx);
+ 	struct page *buddy;
+-
++	//pm_begin
++	if(page->pfn!=0){
++		printk("--**Enter into __free_one_page**--\n");
++		page_idx = page->pfn & ((1 << MAX_ORDER) - 1);
++		
++		while (order < MAX_ORDER - 1) {
++                	buddy_idx = __find_buddy_index(page_idx, order);
++                	buddy = page + (buddy_idx - page_idx);
++                	if (!page_is_buddy(page, buddy, order))
++						break;
++                	/*
++                 	* Our buddy is free or it is CONFIG_DEBUG_PAGEALLOC guard page,
++                 	* merge with it and move up one order.
++                 	*/
++                    list_del(&buddy->lru);
++                    zone->free_area[order].nr_free--;
++                    rmv_page_order(buddy);
++                	combined_idx = buddy_idx & page_idx;
++                	page = page + (combined_idx - page_idx);
++                	page_idx = combined_idx;
++                	order++;
++        }
++        set_page_order(page, order);
++		if ((order < MAX_ORDER-2)) {
++ 	                struct page *higher_page, *higher_buddy;
++        	        combined_idx = buddy_idx & page_idx;
++                	higher_page = page + (combined_idx - page_idx);
++                 	buddy_idx = __find_buddy_index(combined_idx, order + 1);
++            		higher_buddy = higher_page + (buddy_idx - combined_idx);
++                	if (page_is_buddy(higher_page, higher_buddy, order + 1)) {
++                        	list_add_tail(&page->lru,
++                                	&zone->free_area[order].free_list[migratetype]);
++                        	goto newout;
++                	}
++        	}
++ 
++		list_add(&page->lru, &zone->free_area[order].free_list[migratetype]);
++newout:
++	zone->free_area[order].nr_free++;		
++	
++	}
++	//pm_end
++	else{
+ 	VM_BUG_ON(!zone_is_initialized(zone));
+ 
+ 	if (unlikely(PageCompound(page)))
+@@ -610,6 +654,7 @@
+ 	list_add(&page->lru, &zone->free_area[order].free_list[migratetype]);
+ out:
+ 	zone->free_area[order].nr_free++;
++	}
+ }
+ 
+ static inline int free_pages_check(struct page *page)
+@@ -695,14 +740,24 @@
+ static void free_one_page(struct zone *zone, struct page *page, int order,
+ 				int migratetype)
+ {
+-	spin_lock(&zone->lock);
+-	zone->all_unreclaimable = 0;
+-	zone->pages_scanned = 0;
+-
+-	__free_one_page(page, zone, order, migratetype);
+-	if (unlikely(!is_migrate_isolate(migratetype)))
+-		__mod_zone_freepage_state(zone, 1 << order, migratetype);
+-	spin_unlock(&zone->lock);
++	//pm_begin
++	if(page->pfn!=0){
++		printk("--**Enter into __free_pages_ok**--\npage:%p--zone:%s--pfn:%lu\n", page, page->zone->name, page->pfn);
++		spin_lock(&zone->lock);
++		__free_one_page(page, zone, order, migratetype);		
++		spin_unlock(&zone->lock);
++	}
++	//pm_end
++	else{
++		spin_lock(&zone->lock);
++		zone->all_unreclaimable = 0;
++		zone->pages_scanned = 0;
++
++		__free_one_page(page, zone, order, migratetype);
++		if (unlikely(!is_migrate_isolate(migratetype)))
++			__mod_zone_freepage_state(zone, 1 << order, migratetype);
++		spin_unlock(&zone->lock);
++	}
+ }
+ 
+ static bool free_pages_prepare(struct page *page, unsigned int order)
+@@ -735,6 +790,19 @@
+ {
+ 	unsigned long flags;
+ 	int migratetype;
++	//pm_begin
++	if(page->pfn!=0){
++		migratetype = MIGRATE_MOVABLE;
++		printk("--**Enter into __free_pages_ok**--\npage:%p--zone:%s--pfn:%lu\n", page, page->zone->name, page->pfn);
++		local_irq_save(flags);
++		__count_vm_events(PGFREE, 1 << order);
++		set_freepage_migratetype(page, migratetype);
++		free_one_page(page->zone, page, order, migratetype);		
++		local_irq_restore(flags);
++	
++	}
++	//pm_end
++	else{
+ 
+ 	if (!free_pages_prepare(page, order))
+ 		return;
+@@ -745,6 +813,7 @@
+ 	set_freepage_migratetype(page, migratetype);
+ 	free_one_page(page_zone(page), page, order, migratetype);
+ 	local_irq_restore(flags);
++	}
+ }
+ 
+ void __init __free_pages_bootmem(struct page *page, unsigned int order)
+@@ -1476,8 +1545,16 @@
+ 			struct zone *zone, int order, gfp_t gfp_flags,
+ 			int migratetype)
+ {
+-	unsigned long flags;
+ 	struct page *page;
++	//pm_begin
++	if(((__force int)(gfp_flags & GFP_PM))!=0){
++		printk("--**Enter into buffered_rmqueue**--\n");
++		page = __rmqueue_smallest(zone, order, migratetype);
++		return page;
++	}
++	//pm_end
++	else{
++	unsigned long flags;
+ 	int cold = !!(gfp_flags & __GFP_COLD);
+ 
+ again:
+@@ -1538,6 +1615,7 @@
+ failed:
+ 	local_irq_restore(flags);
+ 	return NULL;
++	}
+ }
+ 
+ #ifdef CONFIG_FAIL_PAGE_ALLOC
+@@ -1848,8 +1926,16 @@
+ 		struct zonelist *zonelist, int high_zoneidx, int alloc_flags,
+ 		struct zone *preferred_zone, int migratetype)
+ {
+-	struct zoneref *z;
+ 	struct page *page = NULL;
++	//pm_begin
++	if(((__force int)(gfp_mask & GFP_PM))!=0){
++		printk("--**Enter into get_page_from_freelist**--\n");
++		page = buffered_rmqueue(preferred_zone, pm_zone, order, gfp_mask, migratetype);
++		return page;
++	}
++	//pm_end
++	else{
++	struct zoneref *z;
+ 	int classzone_idx;
+ 	struct zone *zone;
+ 	nodemask_t *allowednodes = NULL;/* zonelist_cache approximation */
+@@ -1992,6 +2078,7 @@
+ 		page->pfmemalloc = !!(alloc_flags & ALLOC_NO_WATERMARKS);
+ 
+ 	return page;
++	}
+ }
+ 
+ /*
+@@ -2600,12 +2687,22 @@
+ __alloc_pages_nodemask(gfp_t gfp_mask, unsigned int order,
+ 			struct zonelist *zonelist, nodemask_t *nodemask)
+ {
++	int alloc_flags = ALLOC_WMARK_LOW|ALLOC_CPUSET;
++	struct page *page = NULL;
++	//pm_begin
++	if(((__force int)(gfp_mask & GFP_PM))!=0)
++	{
++		printk("--**Enter into __alloc_pages_nodemask**--\n");
++		/*ZONE_PM,GFP_PM*/
++		page = get_page_from_freelist(gfp_mask, NULL, order, NULL, -1, alloc_flags, NULL, MIGRATE_MOVABLE);
++		return page;		
++	}
++	//pm_end
++	else{
+ 	enum zone_type high_zoneidx = gfp_zone(gfp_mask);
+ 	struct zone *preferred_zone;
+-	struct page *page = NULL;
+ 	int migratetype = allocflags_to_migratetype(gfp_mask);
+ 	unsigned int cpuset_mems_cookie;
+-	int alloc_flags = ALLOC_WMARK_LOW|ALLOC_CPUSET;
+ 	struct mem_cgroup *memcg = NULL;
+ 
+ 	gfp_mask &= gfp_allowed_mask;
+@@ -2677,6 +2774,7 @@
+ 	memcg_kmem_commit_charge(page, memcg, order);
+ 
+ 	return page;
++	}
+ }
+ EXPORT_SYMBOL(__alloc_pages_nodemask);
+ 
+@@ -2708,11 +2806,19 @@
+ 
+ void __free_pages(struct page *page, unsigned int order)
+ {
+-	if (put_page_testzero(page)) {
+-		if (order == 0)
+-			free_hot_cold_page(page, 0);
+-		else
+-			__free_pages_ok(page, order);
++	//pm_begin
++	if(page->pfn!=0){
++		printk("--**Enter into __free_pages**--\n");
++		__free_pages_ok(page,order);
++	}
++	//pm_end
++	else{
++		if (put_page_testzero(page)) {
++			if (order == 0)
++				free_hot_cold_page(page, 0);
++			else
++				__free_pages_ok(page, order);
++		}
+ 	}
+ }
+ 

@@ -1,0 +1,1 @@
+cmd_/home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.ko := ld -r -m elf_x86_64 -T /home/kaixin/NVMProject/HMFS-Daisy/linux-3.11/scripts/module-common.lds --build-id  -o /home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.ko /home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.o /home/kaixin/NVMProject/HMFS-Daisy/pmvolume/pmvolume.mod.o

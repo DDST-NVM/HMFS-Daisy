@@ -1,0 +1,9 @@
+# numbers of volumes
+1
+# volume_no and numbers of devices
+1 4
+# device_no and size(pages) of each device
+0 0 10
+1 13 5
+2 2 10
+3 5 16

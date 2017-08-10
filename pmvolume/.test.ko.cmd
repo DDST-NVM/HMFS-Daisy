@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/workspaces/NVM卷模式/test_new/test.ko := ld -r -m elf_x86_64 -T /home/eyeboy/Desktop/kernel/linux-3.11.6/scripts/module-common.lds --build-id  -o /mnt/hgfs/workspaces/NVM卷模式/test_new/test.ko /mnt/hgfs/workspaces/NVM卷模式/test_new/test.o /mnt/hgfs/workspaces/NVM卷模式/test_new/test.mod.o
