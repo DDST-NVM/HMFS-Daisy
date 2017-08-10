@@ -44,9 +44,11 @@ int p_init(int size);
 */
 int p_clear();
 
-void *p_malloc(int size);
+void *p_malloc(int pid, int size);
 
-int p_free(void *addr);
+char *p_get_malloc(int pid);
+
+int p_free(int pid);
 
 void *p_new(int pId, int size);
 
@@ -63,5 +65,14 @@ void *p_get_base();
 
 void set_bit_to_one(int iStartBit, int iEnd);
 
+unsigned long *log_create(int pid);
+
+unsigned long *log_delete(int pid);
+
+unsigned long *transaction_start(int pid);
+
+unsigned long *transaction_end(int pid);
+
+unsigned long *transaction_record(int pid, unsigned long *addr);
 #endif
 
